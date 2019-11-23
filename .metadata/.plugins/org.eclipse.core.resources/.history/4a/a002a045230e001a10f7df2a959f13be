@@ -1,0 +1,46 @@
+package StepDefinations;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+
+public class StepDefination {
+	
+	public Chrome_init ci = new Chrome_init();
+	//public final WebDriver dv = ci.getDriver();
+		
+	@Given("^The browser should be opened$")
+    public void the_browser_should_be_opened() throws Throwable {
+        
+    }
+
+	@Given("^push the url \"([^\"]*)\" to the browser$")
+    public void push_the_url_something_to_the_browser(String url) throws Throwable {
+		ci.driver.get(url);
+    }
+
+    @Then("^redirect to the page$")
+    public void redirect_to_the_page() throws Throwable {
+    	
+    }
+    
+    @Given("^Click on all dropdown button$")
+    public void click_on_all_dropdown_button() throws Throwable {
+    	Thread.sleep(5000);
+    	ci.driver.findElement(By.xpath(ObjectRepository.ResourceXPath.dropdownALL)).click();
+    	Select dropdown = new Select(ci.driver.findElement(By.name("url")));
+		dropdown.selectByIndex(12);
+    }
+
+    @Then("^Select \"([^\"]*)\" from the dropdown$")
+    public void select_something_from_the_dropdown(String strArg1) throws Throwable {
+//    	Thread.sleep(5000);
+//		Select dropdown = new Select(ci.driver.findElement(By.name("url")));
+//		dropdown.selectByIndex(12);
+    }
+	
+}

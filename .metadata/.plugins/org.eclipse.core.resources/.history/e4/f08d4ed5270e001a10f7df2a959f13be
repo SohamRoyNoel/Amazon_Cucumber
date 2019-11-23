@@ -1,0 +1,8 @@
+package ObjectRepository;
+
+public class ResourceXPath {
+
+	public static String url = "https://www.amazon.in/";
+	public static String dropdownALL = "//*[@id='searchDropdownBox']";
+	
+}

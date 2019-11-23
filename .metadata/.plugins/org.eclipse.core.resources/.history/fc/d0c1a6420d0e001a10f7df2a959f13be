@@ -1,0 +1,17 @@
+package StepDefinations;
+
+import org.openqa.selenium.WebDriver;
+
+import cucumber.api.java.en.Given;
+
+public class StepDefination {
+
+	public WebDriver driver;
+	
+	@Given("^The browser should be opened$")
+    public void the_browser_should_be_opened() throws Throwable {
+        
+    }
+
+	
+}

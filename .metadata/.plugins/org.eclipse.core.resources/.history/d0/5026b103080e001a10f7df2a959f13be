@@ -1,0 +1,11 @@
+package StepDefinations;
+
+public class StepDefination {
+
+	@Given("^The browser should be opened$")
+    public void the_browser_should_be_opened() throws Throwable {
+        throw new PendingException();
+    }
+
+	
+}

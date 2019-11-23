@@ -1,0 +1,17 @@
+package ObjectRepository;
+
+public class ResourceXPath {
+
+	public static String url = "https://www.amazon.in/";
+	public static String dropdownALL = "//*[@id='searchDropdownBox']";
+	public static String searchFIELD = "//*[@id='twotabsearchtextbox']";
+	public static String searchBUTTON = "//*[@id='nav-search']/form/div[2]/div/input";
+	public static String searchCOUNT = "//*[contains(text(),'results for')]";
+//	public static String bookNAME = "//*[@class='a-size-medium a-color-base a-text-normal' and contains(text(), 'Selenium WebDriver, 1e')]";
+	public static String bookNAME = "//*[@class='a-size-medium a-color-base a-text-normal' and contains(text(), '";
+	
+	public static String prepareBookname(String bknm) {
+		String prepstr = bookNAME+bknm+"')]";
+		return prepstr;
+	}
+}

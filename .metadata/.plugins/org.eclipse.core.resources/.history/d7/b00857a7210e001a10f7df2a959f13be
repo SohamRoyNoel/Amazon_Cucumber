@@ -1,0 +1,7 @@
+package ObjectRepository;
+
+public class ResourceXPath {
+
+	public static String dropdownALL = "//*[@id='searchDropdownBox' and @name='url']";
+	public static String selectBOOKoption = "//*[@id='searchDropdownBox']/option[12]"; 
+}

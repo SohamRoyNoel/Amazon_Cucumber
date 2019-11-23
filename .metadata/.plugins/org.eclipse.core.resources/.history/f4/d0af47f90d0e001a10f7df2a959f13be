@@ -1,0 +1,21 @@
+package StepDefinations;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.java.en.Given;
+
+public class StepDefination {
+
+	public WebDriver driver;
+	
+	@Given("^The browser should be opened$")
+    public void the_browser_should_be_opened() throws Throwable {
+        System.setProperty("webdriver.chrome.driver", "E:\\ChromeDriver\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.get("amazon.in");
+        		
+    }
+
+	
+}

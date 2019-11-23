@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="AmazonWebportal" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="Runner.TestRunner" time="9.751">
+    <testsuite name="Feature: Test Flow" time="9.751">
+      <testsuite name="Scenario: Open the browser" time="0.001">
+        <testcase name="Given The browser should be opened" classname="Scenario: Open the browser" time="0.001"/>
+      </testsuite>
+      <testsuite name="Scenario: Enter URL in the browser" time="0.107">
+        <testcase name="Given push the url &quot;https://www.amazon.in/&quot; to the browser" classname="Scenario: Enter URL in the browser" time="0.001"/>
+        <testcase name="Then redirect to the page" classname="Scenario: Enter URL in the browser" time="0.106"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

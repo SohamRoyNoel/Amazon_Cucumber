@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="AmazonWebportal" tests="9" started="9" failures="0" errors="0" ignored="4">
+  <testsuite name="Runner.TestRunner" time="26.995">
+    <testsuite name="Feature: Test Flow" time="26.995">
+      <testsuite name="Scenario: Open the browser" time="0.127">
+        <testcase name="Given The browser should be opened" classname="Scenario: Open the browser" time="0.127"/>
+      </testsuite>
+      <testsuite name="Scenario: Enter URL in the browser" time="2.324" incomplete="true">
+        <skipped/>
+        <testcase name="Given push the url &quot;https://www.amazon.in/&quot; to the browser" classname="Scenario: Enter URL in the browser" time="0.001"/>
+        <testcase name="Then redirect to the page" classname="Scenario: Enter URL in the browser" time="2.323" ignored="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Choosing category of the search" time="3.996">
+        <testcase name="Given Click on all dropdown button" classname="Scenario: Choosing category of the search" time="1.681"/>
+        <testcase name="Then Select &quot;Books&quot; from the dropdown" classname="Scenario: Choosing category of the search" time="2.315"/>
+      </testsuite>
+      <testsuite name="Scenario: Book Selection" time="2.32" incomplete="true">
+        <skipped/>
+        <testcase name="Given Get the count of the search result for &quot;Selenium Webdriver&quot;" classname="Scenario: Book Selection" time="0.001"/>
+        <testcase name="When Select the books with following details" classname="Scenario: Book Selection" time="0.0" ignored="true"/>
+        <testcase name="Then Verify the book name, authorname, price" classname="Scenario: Book Selection" time="0.0" ignored="true"/>
+        <testcase name="And Write it in excel file" classname="Scenario: Book Selection" time="2.319" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

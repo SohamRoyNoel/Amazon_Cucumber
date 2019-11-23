@@ -1,0 +1,9 @@
+package StepDefinations;
+
+public class Hooks extends Chrome_init {
+
+	public void closeBrowser() {
+		driver.close();
+	}
+	
+}

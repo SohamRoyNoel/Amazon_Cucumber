@@ -1,0 +1,13 @@
+package StepDefinations;
+
+import cucumber.api.java.en.Given;
+
+public class StepDefination extends Chrome_init {
+		
+	@Given("^The browser should be opened$")
+    public void the_browser_should_be_opened() throws Throwable {
+        
+    }
+
+	
+}

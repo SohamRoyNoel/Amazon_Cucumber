@@ -1,0 +1,64 @@
+package StepDefinations;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+
+public class StepDefination {
+	
+	public Chrome_init ci = new Chrome_init();
+	public final WebDriver dv = ci.getDriver();
+		
+	@Given("^The browser should be opened$")
+    public void the_browser_should_be_opened() throws Throwable {
+        
+    }
+
+    @Given("^push the url \"([^\"]*)\" to the browser$")
+    public void push_the_url_something_to_the_browser(String url) throws Throwable {
+    	dv.get(url);
+    }
+
+    @Given("^Click on all dropdown button$")
+    public void click_on_all_dropdown_button() throws Throwable {
+    	push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+    	dv.findElement(By.xpath(ObjectRepository.ResourceXPath.dropdownALL)).click();
+    	System.out.println("Drop down is clicked");
+    }
+    
+    @Then("^Select \"([^\"]*)\" from the dropdown$")
+    public void select_something_from_the_dropdown(String item) throws Throwable {
+    	push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+		Select dropdown = new Select(dv.findElement(By.xpath(ObjectRepository.ResourceXPath.dropdownALL)));
+		dropdown.selectByVisibleText(item);
+    }
+
+    @Then("^Click on the search field$")
+    public void click_on_the_search_field() throws Throwable {
+    	push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+    	dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchFIELD)).click();
+    }
+
+    @Then("^Type \"([^\"]*)\" in the field$")
+    public void type_something_in_the_field(String toBeSearched) throws Throwable {
+    	push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+    	dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchFIELD)).sendKeys(toBeSearched);
+    }
+
+    @And("^Click Search Button when value is \"([^\"]*)\"$")
+    public void click_search_button_when_value_is_something(String toBeSearched) throws Throwable {
+    	push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+    	dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchFIELD)).sendKeys(toBeSearched);
+    	dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchBUTTON)).click();
+    }
+	
+    @Given("^Get the count of the search result$")
+    public void get_the_count_of_the_search_result() throws Throwable {
+    	push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+    	
+    }
+}

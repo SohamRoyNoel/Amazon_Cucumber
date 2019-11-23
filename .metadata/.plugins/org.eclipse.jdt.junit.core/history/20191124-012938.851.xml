@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="AmazonWebportal" tests="5" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="Runner.TestRunner" incomplete="true">
+    <testsuite name="Feature: Test Flow" incomplete="true">
+      <testsuite name="Scenario: Open the browser" time="0.041">
+        <testcase name="Given The browser should be opened" classname="Scenario: Open the browser" time="0.041"/>
+      </testsuite>
+      <testsuite name="Scenario: Enter URL in the browser" incomplete="true">
+        <testcase name="Given push the url &quot;https://www.amazon.in/&quot; to the browser" classname="Scenario: Enter URL in the browser" time="0.003"/>
+        <testcase name="Then redirect to the page" classname="Scenario: Enter URL in the browser" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Choosing category of the search" incomplete="true">
+        <testcase name="Given Click on all dropdown button" classname="Scenario: Choosing category of the search" incomplete="true"/>
+        <testcase name="Then Select &quot;Books&quot; from the dropdown" classname="Scenario: Choosing category of the search" incomplete="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

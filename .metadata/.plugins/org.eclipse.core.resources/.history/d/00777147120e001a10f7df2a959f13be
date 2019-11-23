@@ -1,0 +1,15 @@
+package StepDefinations;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Chrome_init {
+
+	public static WebDriver driver;
+	
+	public static WebDriver getDriver() {
+		System.setProperty("webdriver.chrome.driver", "E:\\ChromeDriverOLD\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+	}
+	
+}

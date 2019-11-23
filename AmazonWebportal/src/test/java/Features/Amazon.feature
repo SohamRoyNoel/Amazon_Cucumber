@@ -1,0 +1,50 @@
+Feature: Test Flow
+
+@amazonBROWSER
+Scenario: Open the browser
+Given The browser should be opened
+
+@amazonURL
+Scenario: Enter URL in the browser
+Given push the url "https://www.amazon.in/" to the browser
+Then redirect to the page
+
+@amazonSELECTION
+Scenario: Choosing category of the search
+Given Click on all dropdown button
+Then Select "Books" from the dropdown
+
+@amazonSEARCH
+Scenario: Searching Books
+Given push the url "https://www.amazon.in/" to the browser 
+Then Click on the search field
+Then Type "Selenium Webdriver" in the field
+And Click Search Button when value is "Selenium Webdriver"
+
+@amazonBOOKselection
+Scenario: Book Selection
+Given Get the count of the search result for "Selenium Webdriver"
+When Select the books with following details for "Selenium WebDriver, 1e"
+|Selenium WebDriver, 1e | Rajeev Gupta |
+Then Verify the book name, authorname, price
+|Selenium WebDriver, 1e | Gupta |496|
+And Write it in excel file
+
+Scenario: Comment collection
+Given Capture any customer review
+Then write it on excel file
+
+Scenario: Adding To Cart
+Given Verify the CART option
+Then Add the book to the CART
+
+Scenario: Verify The element in the cart
+Given Click on the CART option
+Then Verify the book name in the cart
+
+Scenario: Removing the element from the cart
+Given Remove the element from the cart
+Then Verify the message "Selenium WebDriver, 1e was removed from Shopping Cart."
+
+Scenario: Close the browser
+Given Close the chrome driver  
