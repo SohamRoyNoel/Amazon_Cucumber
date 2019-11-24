@@ -1,0 +1,29 @@
+package ObjectRepository;
+
+public class ResourceXPath {
+
+	public static String url = "https://www.amazon.in/";
+	public static String dropdownALL = "//*[@id='searchDropdownBox']";
+	public static String searchFIELD = "//*[@id='twotabsearchtextbox']";
+	public static String searchBUTTON = "//*[@id='nav-search']/form/div[2]/div/input";
+	public static String searchCOUNT = "//*[contains(text(),'results for')]";
+	public static String bookNAME = "//*[@class='a-size-medium a-color-base a-text-normal' and contains(text(), '";
+	
+	public static String targetBookAuthorNAME = "//*[contains(text(), '";
+	public static String targetBookPRICE = "//*[contains(text(), '496') and @class='a-size-medium a-color-price inlineBlock-display offer-price a-text-normal price3P']";
+	
+	public static String prepareBookname(String bknm) {
+		String prepstr = bookNAME+bknm+"')]";
+		return prepstr;
+	}
+	
+	public static String prepareBookauth(String auth) {
+		String prepstr = targetBookAuthorNAME+auth+"') and @class='a-link-normal']";
+		return prepstr;
+	}
+	
+	public static String prepareBookprice(String prc) {
+		String prepstr = targetBookPRICE+bknm+"')]";
+		return prepstr;
+	}
+}

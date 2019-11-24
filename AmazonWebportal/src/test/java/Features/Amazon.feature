@@ -29,6 +29,7 @@ When Select the books with following details for "Selenium WebDriver, 1e"
 Then Verify the book name, authorname, price
 |Selenium WebDriver, 1e | Gupta |496|
 And Write it in excel file
+|Selenium WebDriver, 1e | Gupta |496|
 
 Scenario: Comment collection
 Given Capture any customer review

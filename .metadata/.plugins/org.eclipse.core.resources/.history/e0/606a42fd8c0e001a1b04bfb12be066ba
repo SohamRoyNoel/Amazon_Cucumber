@@ -1,0 +1,113 @@
+package StepDefinations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class StepDefination {
+
+	public Chrome_init ci = new Chrome_init();
+	public final WebDriver dv = ci.getDriver();
+
+	@Given("^The browser should be opened$")
+	public void the_browser_should_be_opened() throws Throwable {
+
+	}
+
+	@Given("^push the url \"([^\"]*)\" to the browser$")
+	public void push_the_url_something_to_the_browser(String url) throws Throwable {
+		dv.get(url);
+	}
+
+	@Given("^Click on all dropdown button$")
+	public void click_on_all_dropdown_button() throws Throwable {
+		push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.dropdownALL)).click();
+		System.out.println("Drop down is clicked");
+	}
+
+	@Then("^Select \"([^\"]*)\" from the dropdown$")
+	public void select_something_from_the_dropdown(String item) throws Throwable {
+		push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+		Select dropdown = new Select(dv.findElement(By.xpath(ObjectRepository.ResourceXPath.dropdownALL)));
+		dropdown.selectByVisibleText(item);
+		System.out.println("Drop down is SELECTED");
+	}
+
+	@Then("^Click on the search field$")
+	public void click_on_the_search_field() throws Throwable {
+		push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchFIELD)).click();
+		System.out.println("Value is searched");
+	}
+
+	@Then("^Type \"([^\"]*)\" in the field$")
+	public void type_something_in_the_field(String toBeSearched) throws Throwable {
+		push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchFIELD)).sendKeys(toBeSearched);
+		System.out.println("Type something in the field");
+	}
+
+	@And("^Click Search Button when value is \"([^\"]*)\"$")
+	public void click_search_button_when_value_is_something(String toBeSearched) throws Throwable {
+		push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);	
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchFIELD)).sendKeys(toBeSearched);
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchBUTTON)).click();
+		System.out.println("Search button is clicked");
+	}
+
+	@Given("^Get the count of the search result for \"([^\"]*)\"$")
+	public void get_the_count_of_the_search_result_for_something(String willBesearched) throws Throwable {
+		push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchFIELD)).sendKeys(willBesearched);
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchBUTTON)).click();
+		String getCounter = dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchCOUNT)).getText();
+		if(getCounter.contains("results for")) {
+			String count = getCounter.substring(getCounter.indexOf("of")+3, getCounter.indexOf("results ")-1);
+			System.out.println("Count is : " + count);
+		}
+	}
+
+	@When("^Select the books with following details for \"([^\"]*)\"$")
+	public void select_the_books_with_following_details_for_something(String toBEsearched, DataTable dataTable) throws Throwable {
+		push_the_url_something_to_the_browser(ObjectRepository.ResourceXPath.url);
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchFIELD)).sendKeys(toBEsearched);
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.searchBUTTON)).click();
+		List<List<String>> obj = dataTable.raw();
+		dv.findElement(By.xpath(ObjectRepository.ResourceXPath.prepareBookname(obj.get(0).get(0)))).click();
+		Thread.sleep(3000);
+		System.out.println("The book is choosen");
+	}
+
+	@Then("^Verify the book name, authorname, price$")
+	public void verify_the_book_name_authorname_price(DataTable dataTable) throws Throwable {
+		List<List<String>> obj = dataTable.raw();
+		String Bookname = obj.get(0).get(0);
+		String Bookauthor = obj.get(0).get(1);
+		String Bookprice = obj.get(0).get(2);
+
+		((JavascriptExecutor) dv).executeScript("window.focus();");
+
+		String bookname = dv.findElement(By.xpath(ObjectRepository.ResourceXPath.prepareBookname(Bookname))).getText();
+		Thread.sleep(2000);
+		ArrayList<String> tabs2 = new ArrayList<String> (dv.getWindowHandles());
+		dv.switchTo().window(tabs2.get(1));
+		dv.close();
+		dv.switchTo().window(tabs2.get(0));
+		String bookauth = dv.findElement(By.xpath(ObjectRepository.ResourceXPath.targetBookAuthorNAME)).getText();
+
+		System.out.println("********************************" + bookname + " "  + " " + bookauth);
+	}
+}

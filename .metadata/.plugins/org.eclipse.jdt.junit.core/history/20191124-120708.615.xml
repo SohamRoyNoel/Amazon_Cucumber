@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="AmazonWebportal" tests="4" started="4" failures="0" errors="3" ignored="1">
+  <testsuite name="Runner.TestRunner" time="6.657">
+    <testsuite name="Feature: Test Flow" time="6.657">
+      <testsuite name="Scenario: Book Selection" time="6.652" incomplete="true">
+        <error>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.7.0', revision: '2321c73', time: '2017-11-02T22:22:35.584Z'
+System info: host: 'DESKTOP-LHLA0PA', ip: '192.168.153.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: RemoteWebDriver&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:324)&#13;
+	at StepDefinations.StepDefination.push_the_url_something_to_the_browser(StepDefination.java:30)&#13;
+	at StepDefinations.StepDefination.verify_the_book_name_authorname_price(StepDefination.java:105)&#13;
+	at ✽.Then Verify the book name, authorname, price(src/test/java/Features/Amazon.feature:29)&#13;
+&#13;
+org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.7.0', revision: '2321c73', time: '2017-11-02T22:22:35.584Z'
+System info: host: 'DESKTOP-LHLA0PA', ip: '192.168.153.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: RemoteWebDriver&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:657)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:486)&#13;
+	at StepDefinations.Hooks.closeBrowser(Hooks.java:9)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at cucumber.runtime.Utils$1.call(Utils.java:40)&#13;
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)&#13;
+	at cucumber.runtime.Utils.invoke(Utils.java:34)&#13;
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)&#13;
+	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:224)&#13;
+	at cucumber.runtime.Runtime.runHooks(Runtime.java:212)&#13;
+	at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:206)&#13;
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)&#13;
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:100)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)&#13;
+&#13;
+</error>
+        <testcase name="Given Get the count of the search result for &quot;Selenium Webdriver&quot;" classname="Scenario: Book Selection" time="6.627"/>
+        <testcase name="When Select the books with following details for &quot;Selenium WebDriver, 1e&quot;" classname="Scenario: Book Selection" time="0.02"/>
+        <testcase name="Then Verify the book name, authorname, price" classname="Scenario: Book Selection" time="0.004">
+          <error>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.7.0', revision: '2321c73', time: '2017-11-02T22:22:35.584Z'
+System info: host: 'DESKTOP-LHLA0PA', ip: '192.168.153.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: RemoteWebDriver&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:324)&#13;
+	at StepDefinations.StepDefination.push_the_url_something_to_the_browser(StepDefination.java:30)&#13;
+	at StepDefinations.StepDefination.verify_the_book_name_authorname_price(StepDefination.java:105)&#13;
+	at ✽.Then Verify the book name, authorname, price(src/test/java/Features/Amazon.feature:29)&#13;
+&#13;
+</error>
+        </testcase>
+        <testcase name="And Write it in excel file" classname="Scenario: Book Selection" time="0.002" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

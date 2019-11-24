@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="AmazonWebportal" tests="4" started="4" failures="0" errors="0" ignored="1">
+  <testsuite name="Runner.TestRunner" time="6.769">
+    <testsuite name="Feature: Test Flow" time="6.769">
+      <testsuite name="Scenario: Book Selection" time="6.769" incomplete="true">
+        <skipped/>
+        <testcase name="Given Get the count of the search result for &quot;Selenium Webdriver&quot;" classname="Scenario: Book Selection" time="6.619"/>
+        <testcase name="When Select the books with following details for &quot;Selenium WebDriver, 1e&quot;" classname="Scenario: Book Selection" time="0.088"/>
+        <testcase name="Then Verify the book name, authorname, price" classname="Scenario: Book Selection" time="0.001"/>
+        <testcase name="And Write it in excel file" classname="Scenario: Book Selection" time="0.061" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

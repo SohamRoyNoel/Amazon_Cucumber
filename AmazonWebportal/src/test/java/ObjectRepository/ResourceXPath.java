@@ -8,9 +8,10 @@ public class ResourceXPath {
 	public static String searchBUTTON = "//*[@id='nav-search']/form/div[2]/div/input";
 	public static String searchCOUNT = "//*[contains(text(),'results for')]";
 	public static String bookNAME = "//*[@class='a-size-medium a-color-base a-text-normal' and contains(text(), '";
-	public static String targetBookNAME = "//span[starts-with(@id,'productTitle')]";
-	public static String targetBookAuthorNAME = "//*[@id='bylineInfo']/span/a";
-	public static String targetBookPRICE = "//*[@id='soldByThirdParty']/span";
+	
+	public static String targetBookAuthorNAME = "/html/body/div[2]/div[2]/div[4]/div[5]/div[1]/div[2]/span/a";
+	public static String targetBookPRICE = "//*[@id='soldByThirdParty']//child::span";
+	public static String targetBookCLASS = "a-size-medium a-color-price inlineBlock-display offer-price a-text-normal price3P";	
 	
 	public static String prepareBookname(String bknm) {
 		String prepstr = bookNAME+bknm+"')]";

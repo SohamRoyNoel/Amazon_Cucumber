@@ -15,6 +15,7 @@ public class Chrome_init {
 	public WebDriver getDriver() {
 		System.setProperty("webdriver.chrome.driver", "E:\\ChromeDriverOLD\\chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         return driver;
 	}
 	
